@@ -1,0 +1,38 @@
+Verification date: 2026-07-20 (Asia/Shanghai)
+
+Repository
+----------
+Remote: https://github.com/bitcoin-core/secp256k1
+Branch: master
+HEAD: 8c3e6e6d992456d3b9228305ae84a6703273cf70
+Reachable commits: 2800
+Latest release tag present: v0.7.1
+
+Build environment
+-----------------
+CMake: 3.27.2
+C compiler: MinGW-w64 GCC 13.2.0
+Configuration: Release (-O2)
+Enabled modules: ECDH, extrakeys, Schnorr signatures, MuSig2, ElligatorSwift
+Enabled binaries: tests, noverify_tests, exhaustive_tests, examples, benchmarks
+ecmult window: 15
+ecmult_gen precomputation table: 86 KiB
+
+Test result
+-----------
+Command: ctest --test-dir build-assignment2 --output-on-failure
+Result: 212/212 tests passed, 0 failed
+Elapsed real time: 100.84 seconds
+
+Coverage included ECDSA, ECDH Wycheproof, Schnorr/BIP340, Taproot cases,
+MuSig2 vectors, ElligatorSwift vectors/XDH, modular inverse tests, exhaustive
+small-group tests, examples, and ordinary/no-VERIFY test variants.
+
+Known verification boundary
+---------------------------
+Valgrind is unavailable in this Windows environment, so CMake reported
+SECP256K1_BUILD_CTIME_TESTS=OFF. The ordinary functional and exhaustive tests
+therefore do not by themselves prove constant-time machine code. Constant-time
+claims in the report are based on the upstream fixes, release notes, code, and
+the project's dedicated testing design; reproducing ctime_tests requires a
+supported Valgrind environment (normally Linux).

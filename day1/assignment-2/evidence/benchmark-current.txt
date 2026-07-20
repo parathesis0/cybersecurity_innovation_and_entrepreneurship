@@ -1,0 +1,27 @@
+Date: 2026-07-20
+Repository HEAD: 8c3e6e6d992456d3b9228305ae84a6703273cf70
+Platform: Windows x86_64, MinGW-w64 GCC 13.2.0, CMake 3.27.2
+Build: Release, -O2, x86_64 scalar assembly enabled, 86 KiB ecmult_gen table
+SECP256K1_BENCH_ITERS=20000
+
+Benchmark                     Min (us)    Avg (us)    Max (us)
+ecdsa_verify                     28.4        33.2        48.3
+ecdsa_sign                       27.8        29.2        30.5
+ec_keygen                        18.7        19.9        21.6
+ecdh                             41.2        44.3        49.3
+schnorrsig_sign                  19.6        19.9        20.2
+schnorrsig_verify                43.8        46.9        52.6
+ellswift_ecdh                    45.4        50.0        58.7
+
+Internal benchmark (representative run):
+scalar_inverse                    2.27        2.34         2.42
+scalar_inverse_var                1.44        1.48         1.56
+field_inverse                     2.28        2.37         2.41
+field_inverse_var                 1.49        1.54         1.62
+field_mul                         0.0200      0.0281       0.0480
+
+Notes:
+- These numbers describe this machine and toolchain, not a universal speed claim.
+- The benchmark program performs repeated trials and reports min/average/max.
+- Relative upstream figures quoted in REPORT.md come from the corresponding
+  upstream commit/merge messages and are kept separate from this local run.

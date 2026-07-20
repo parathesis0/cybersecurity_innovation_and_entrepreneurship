@@ -1,0 +1,71 @@
+Assignment 1: Testnet4 transaction byte-level parse and verification
+==============================================================================
+txid                 : 1dd070a132e4c5dd1ab2fde424b82903a53e6afa22b921d9448590b71a5bcda7
+txid matches metadata: True
+wtxid                : 7cf07f44093e8298477643bd9584e9063023abf881343056be21a7c50c8a4021
+wtxid matches metadata: True
+version / locktime    : 2 / 144876
+size / base / witness : 222 / 113 / 109 bytes
+weight / vsize        : 561 WU / 141 vB (exact 140.25 vB)
+input / output value  : 394,027 / 391,772 sat
+fee                   : 2,255 sat
+fee rate              : 16.07843137 sat/vB (exact-weight convention)
+block                 : 144878 / 0000000000b9d2773b283332f6e1c36da7fdd7b11af12fa7f14866e0beb425ca
+
+Inputs
+------
+vin[0]: 97afb394e8b43d67c84b852a990055ce2b2de0ee8c7578139dee2d0b5a337a6a:1, sequence=0xfffffffd, scriptSig=<empty>
+
+Outputs
+-------
+vout[0]: 114,514 sat, P2WPKH, tb1qerzrlxcfu24davlur5sqmgzzgsal6wusda40er, script=0014c8c43f9b09e2aadeb3fc1d200da042443bfd3b90
+vout[1]: 277,258 sat, P2WPKH, tb1qycpmmqv7evxsexkcsaz6kl730x84zamzcdgpaq, script=00142603bd819ecb0d0c9ad88745ab7fd1798f517762
+
+P2WPKH / BIP143 verification
+----------------------------
+sighash byte           : 0x01 (SIGHASH_ALL)
+scriptCode             : 76a914da745aa07fb147ac116a2e9aba387479df1c6cc488ac
+hashPrevouts           : 25c272a0fd0ea79e57a596db15ab314f7bb68780fc095d706c823c8b988ab4c9
+hashSequence           : caf35e5224de16efa3ccaf41070f6e7b9432b6f79551e629fca9d1c03b43bc52
+hashOutputs            : 86e59c1fd4459f78f832f412e2f3ec04f52d5f95eb1b437ec1330c02d8d49518
+BIP143 preimage        : 0200000025c272a0fd0ea79e57a596db15ab314f7bb68780fc095d706c823c8b988ab4c9caf35e5224de16efa3ccaf41070f6e7b9432b6f79551e629fca9d1c03b43bc526a7a335a0b2dee9d1378758ceee02d2bce5500992a854bc8673db4e894b3af97010000001976a914da745aa07fb147ac116a2e9aba387479df1c6cc488ac2b03060000000000fdffffff86e59c1fd4459f78f832f412e2f3ec04f52d5f95eb1b437ec1330c02d8d49518ec35020001000000
+double-SHA256 digest   : 69cbe0b2ddf0d3b96bf4ecb9f9a9c5291ac6ddf55848ef91b5c6d18a3808cc83
+public key             : 023080eb7885daed9fc54d3f5314672716c98679ccc0d0d690c4ad00a7930302e8
+HASH160(public key)    : da745aa07fb147ac116a2e9aba387479df1c6cc4
+prevout witness program: da745aa07fb147ac116a2e9aba387479df1c6cc4
+pubkey hash matches    : True
+ECDSA r                : 37462debb2cccf9d64623982195ea538e6ed24fe79b62aad41c328d49f1cb549
+ECDSA s                : 32954dd35fcaeb8fa015d442d0db092a2c6706e4d8433ced0edd62e46a0da691
+low-S canonical        : True
+ECDSA verifies         : True
+
+Byte coverage
+-------------
+all 222 bytes covered exactly once
+
+Complete field map
+------------------
+offset(dec/hex) | bytes | field | raw hex | decoded
+------------------------------------------------------------------------------------------------------------------------
+    0/0x0000 |    4 | tx.version | 02000000 | 2 (32-bit little-endian)
+    4/0x0004 |    1 | tx.marker | 00 | 0x00: extended/SegWit serialization marker
+    5/0x0005 |    1 | tx.flag | 01 | 0x01: witness data present
+    6/0x0006 |    1 | tx.input_count | 01 | 1
+    7/0x0007 |   32 | tx.vin[0].prev_txid | 6a7a335a0b2dee9d1378758ceee02d2bce5500992a854bc8673db4e894b3af97 | 97afb394e8b43d67c84b852a990055ce2b2de0ee8c7578139dee2d0b5a337a6a (display order)
+   39/0x0027 |    4 | tx.vin[0].prev_vout | 01000000 | 1
+   43/0x002b |    1 | tx.vin[0].scriptSig_length | 00 | 0
+   44/0x002c |    0 | tx.vin[0].scriptSig | <empty> | empty
+   44/0x002c |    4 | tx.vin[0].sequence | fdffffff | 0xfffffffd; BIP125 RBF=yes; BIP68 relative lock disabled=yes
+   48/0x0030 |    1 | tx.output_count | 02 | 2
+   49/0x0031 |    8 | tx.vout[0].value | 52bf010000000000 | 114,514 sat = 0.00114514 BTC
+   57/0x0039 |    1 | tx.vout[0].scriptPubKey_length | 16 | 22
+   58/0x003a |   22 | tx.vout[0].scriptPubKey | 0014c8c43f9b09e2aadeb3fc1d200da042443bfd3b90 | P2WPKH, tb1qerzrlxcfu24davlur5sqmgzzgsal6wusda40er
+   80/0x0050 |    8 | tx.vout[1].value | 0a3b040000000000 | 277,258 sat = 0.00277258 BTC
+   88/0x0058 |    1 | tx.vout[1].scriptPubKey_length | 16 | 22
+   89/0x0059 |   22 | tx.vout[1].scriptPubKey | 00142603bd819ecb0d0c9ad88745ab7fd1798f517762 | P2WPKH, tb1qycpmmqv7evxsexkcsaz6kl730x84zamzcdgpaq
+  111/0x006f |    1 | tx.vin[0].witness.item_count | 02 | 2
+  112/0x0070 |    1 | tx.vin[0].witness[0].length | 47 | 71
+  113/0x0071 |   71 | tx.vin[0].witness[0] | 3044022037462debb2cccf9d64623982195ea538e6ed24fe79b62aad41c328d49f1cb549022032954dd35fcaeb8fa015d442d0db092a2c6706e4d8433ced0edd62e46a0da69101 | DER ECDSA signature followed by one-byte sighash type
+  184/0x00b8 |    1 | tx.vin[0].witness[1].length | 21 | 33
+  185/0x00b9 |   33 | tx.vin[0].witness[1] | 023080eb7885daed9fc54d3f5314672716c98679ccc0d0d690c4ad00a7930302e8 | compressed public key; prefix=0x02
+  218/0x00da |    4 | tx.locktime | ec350200 | 144876 (block height)

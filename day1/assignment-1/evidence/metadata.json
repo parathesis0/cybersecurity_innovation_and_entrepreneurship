@@ -1,0 +1,30 @@
+{
+  "network": "Bitcoin Testnet4",
+  "txid": "1dd070a132e4c5dd1ab2fde424b82903a53e6afa22b921d9448590b71a5bcda7",
+  "wtxid": "7cf07f44093e8298477643bd9584e9063023abf881343056be21a7c50c8a4021",
+  "block_height": 144878,
+  "block_hash": "0000000000b9d2773b283332f6e1c36da7fdd7b11af12fa7f14866e0beb425ca",
+  "block_time": 1784541269,
+  "input_prevout": {
+    "input_index": 0,
+    "txid": "97afb394e8b43d67c84b852a990055ce2b2de0ee8c7578139dee2d0b5a337a6a",
+    "vout": 1,
+    "value_sats": 394027,
+    "script_pubkey": "0014da745aa07fb147ac116a2e9aba387479df1c6cc4",
+    "address": "tb1qmf694grlk9r6cyt296dt5wr50803cmxy6vn2p2"
+  },
+  "recipient": {
+    "value_sats": 114514,
+    "script_pubkey": "0014c8c43f9b09e2aadeb3fc1d200da042443bfd3b90",
+    "address": "tb1qerzrlxcfu24davlur5sqmgzzgsal6wusda40er"
+  },
+  "change": {
+    "value_sats": 277258,
+    "script_pubkey": "00142603bd819ecb0d0c9ad88745ab7fd1798f517762",
+    "address": "tb1qycpmmqv7evxsexkcsaz6kl730x84zamzcdgpaq"
+  },
+  "fee_sats": 2255,
+  "fee_rate_exact_sat_vb": 16.07843137254902,
+  "fee_note": "Final transaction used the confirmed 16x setting. Older fee quotations visible in process screenshots are non-authoritative.",
+  "source": "https://mempool.space/testnet4/api/tx/1dd070a132e4c5dd1ab2fde424b82903a53e6afa22b921d9448590b71a5bcda7"
+}
