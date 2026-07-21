@@ -6,6 +6,8 @@
 
 ## 提交文件
 
+- `REPORT.md`：Markdown 报告。
+
 - `REPORT.docx`：Word 报告。
 - `tx.txt`：最终广播交易的原始十六进制。
 - `imgs/`：Sparrow Wallet 实验过程截图。

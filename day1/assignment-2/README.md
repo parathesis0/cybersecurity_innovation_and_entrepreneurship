@@ -9,6 +9,7 @@
 ```text
 day1/
 ├── assignment-2/
+│   ├── REPORT.md
 │   ├── REPORT.docx
 │   ├── evidence/
 │   └── scripts/
@@ -17,6 +18,7 @@ day1/
 
 ## 提交文件
 
+- `REPORT.md`：Markdown 报告。
 - `REPORT.docx`：报告的 Word 版本。
 - `scripts/ecdsa_hash_forgery_demo.py`：复现课件中的“未校验消息时伪造 ECDSA 签名”实验。
 - `scripts/rfc6979_reduction_demo.py`：复现 RFC 6979 中 `bits2octets`/模群阶归约的差异。
